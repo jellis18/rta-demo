@@ -19,6 +19,7 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt && \
 
 COPY --chown=$USER:$USER src/main.py /app
 COPY --chown=$USER:$USER src/templates/ /app/templates/
+COPY --chown=$USER:$USER src/static/ /app/static/
 
 USER $USER
 

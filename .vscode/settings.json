@@ -1,5 +1,13 @@
 {
     "python.analysis.extraPaths": [
         "src/"
+    ],
+    "python.linting.flake8Args": [
+        "--config",
+        "${workspaceFolder}/src/.flake8"
+    ],
+    "python.formatting.blackArgs": [
+        "--config",
+        "${workspaceFolder}/src/pyproject.toml"
     ]
 }

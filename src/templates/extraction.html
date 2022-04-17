@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,11 +11,7 @@
 
 <body>
     <div class="center">
-        <form action="/extraction" method="post">
-            <h3>Write your text here.</h3>
-            <textarea name="text" id="txt" cols="50" rows="5"></textarea>
-            <input type="submit" class="button" value=Submit! />
-        </form>
+        {{ entities | safe }}
     </div>
 </body>
 
