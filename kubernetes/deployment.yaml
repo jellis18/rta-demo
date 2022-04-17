@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rta-app
+  namespace: rta
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rta-app
+  template:
+    metadata:
+      labels:
+        app: rta-app
+    spec:
+      containers:
+        - name: rta-app
+          image: rtaacr.azurecr.io/rta-app:0.0.1
+          resources:
+            limits:
+              memory: "500M"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
