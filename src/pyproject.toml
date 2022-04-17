@@ -1,0 +1,33 @@
+[tool.black]
+line-length = 120
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | src
+  | env
+  | venv
+  | docs
+)/
+'''
+
+[tool.isort]
+profile = "black"
+dedup_headings = true
+line_length = 120
+
+[tool.pyright]
+strrictParameterNoneValue = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

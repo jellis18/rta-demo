@@ -1,0 +1,7 @@
+# Exclude everything
+*
+
+# Only include relevant files
+!src/main.py
+!src/requirements.txt
+!src/templates

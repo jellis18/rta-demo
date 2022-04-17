@@ -1,0 +1,2 @@
+fastapi[all]~=0.75
+spacy~=3.1
