@@ -6,7 +6,10 @@ terraform apply -auto-approve
 
 ## K8s
 ```bash
-az aks get-credentials --resource-group rta-resource-group --name rta-demo-cluster
+az aks get-credentials --resource-group rta-resource-group --name rta-demo-cluster --overwrite-existing
+
+kubectl create namespace rta
+kubectl apply -f deployment.yaml -f service.yaml
 ```
 
 ## Docker

@@ -26,14 +26,14 @@ resource "azurerm_role_assignment" "acrpull" {
 
 resource "azurerm_container_registry" "acr" {
   location            = "eastus"
-  name                = "rtaAcr"
+  name                = "rtaacr"
   resource_group_name = azurerm_resource_group.rg.name
   sku                 = "Standard"
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
   name                = "rta-demo-cluster"
-  kubernetes_version  = 1.21
+  kubernetes_version  = "1.21.9"
   location            = "eastus"
   resource_group_name = azurerm_resource_group.rg.name
   dns_prefix          = "rta-demo-cluster"
