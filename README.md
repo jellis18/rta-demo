@@ -19,15 +19,6 @@ terraform plan
 terraform apply -auto-approve
 ```
 
-## K8s
-```bash
-az aks get-credentials --resource-group rta-resource-group --name rta-demo-cluster --overwrite-existing
-
-cd kubernetes
-kubectl create namespace rta
-kubectl apply -f deployment.yaml -f service.yaml
-```
-
 ## Docker
 ```bash
 docker build -t rta-app:latest -f docker/Dockerfile .
@@ -39,4 +30,14 @@ az acr login -n rtaacr
 docker image push rtaacr.azurecr.io/rta-app:0.0.1
 
 az acr repository show-tags --name rtaacr --repository rta-app
+```
+
+
+## K8s
+```bash
+az aks get-credentials --resource-group rta-resource-group --name rta-demo-cluster --overwrite-existing
+
+cd kubernetes
+kubectl create namespace rta
+kubectl apply -f deployment.yaml -f service.yaml
 ```
